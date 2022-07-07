@@ -116,3 +116,22 @@ height: auto;
     height: 100%;
     border-radius: 100px;
       }
+
+
+.upGo{
+  position: fixed;
+  top: 90vh;
+  left: 95vw;
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+}
+.upGo>img{
+width: 100%;
+height: 100%;
+}
+.upGo>img:hover{
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  }

@@ -2,11 +2,13 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import axios from "axios"
 import { useRef } from 'react';
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 const Weired = () => {
 const [contacts,setContacts]=useState([]);
 const [page,setPage]=useState(1)
 const [namez,setName]=useState("")
-
+const myRef = useRef(null)
+   const executeScroll = () => scrollToRef(myRef)
 useEffect(()=>{
   getContacts();
 },[namez,page])
@@ -41,7 +43,7 @@ window.addEventListener('scroll',()=>{
   })
 
   return <>
-    <div className='weired'>
+    <div ref={myRef} className='weired'>
 <h1 >Rick and Morty Search</h1>
 <div>
 <div><img src="/search.jpg" alt="search-ico"  /></div>
@@ -73,6 +75,9 @@ window.addEventListener('scroll',()=>{
         </div>
        }) 
     }
+</div>
+<div  onClick={executeScroll} className='upGo'>
+<img src="/top.png" alt="" />
 </div>
     </>
 }
