@@ -85,7 +85,10 @@ body{
   background-color: white;
   margin-bottom: 7px;
 }
-
+.dislayData>div:hover{
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
 .dislayData>div>div{
   width: 50%;
   display: flex;
