@@ -1,7 +1,10 @@
 import React from 'react'
 import { useEffect } from 'react';
-const SingleSpecies = ({single,setTempState}) => {
-   
+import { useContext } from 'react';
+import {ContextStyle} from '../contextApi/contextApi'
+const DetailsUserCard = () => {
+    const {contacts,togglePage,page,toggleTempState,single}=useContext(ContextStyle) 
+
         useEffect(() => {
           document.body.style.overflow = "hidden";
         }, []);
@@ -12,7 +15,7 @@ const SingleSpecies = ({single,setTempState}) => {
 <div className='closeDIv' >
 <h4 onClick={()=>{
     document.body.style.overflow = "scroll";
-    setTempState(false)
+    toggleTempState(false)
 }}>X</h4>
 </div>
 <div className='imgSec'>
@@ -54,4 +57,4 @@ const SingleSpecies = ({single,setTempState}) => {
   )
 }
 
-export default SingleSpecies
+export default DetailsUserCard
