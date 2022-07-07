@@ -218,3 +218,26 @@ margin-left: 5%;
   border-radius: 2.5px;
 
 }
+.detSec{
+  height: auto;
+  width: 85%;
+margin: auto;
+margin-top: 10px;
+}
+.detSec >div{
+  display: flex;
+  width:100%;
+  height:60px;
+  align-items: center;
+  justify-content: center;
+}
+.detSec >div>div{
+  width: 50%;
+}
+.detSec >div>div h5,h4{
+  text-align: left;
+  margin: 0;
+}
+.detSec >div>div h5{
+ color: #a5a9b2;
+}

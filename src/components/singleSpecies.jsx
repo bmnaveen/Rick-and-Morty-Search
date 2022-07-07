@@ -27,7 +27,26 @@ const SingleSpecies = ({single,setTempState}) => {
 <div className='lineDiv'>
 </div>
 <div className='detSec'>
-
+<div>
+    <div>
+    <h5>gendre</h5>
+    <h4>{single.gender}</h4>
+    </div>
+    <div>
+    <h5>Location</h5>
+    <h4>{single.location.name}</h4>
+    </div>
+</div>
+<div>
+<div>
+    <h5>Species</h5>
+    <h4>{single.species}</h4>
+    </div>
+    <div>
+    <h5>Origin</h5>
+    <h4>{single.origin.name}</h4>
+    </div> 
+</div>
 </div>
 </div>
 
