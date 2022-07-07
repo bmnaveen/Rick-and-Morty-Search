@@ -2,11 +2,14 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import axios from "axios"
 import { useRef } from 'react';
+import SingleSpecies from './singleSpecies';
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 const Weired = () => {
 const [contacts,setContacts]=useState([]);
 const [page,setPage]=useState(1)
 const [namez,setName]=useState("")
+const [single,setSingle]=useState({})
+const [tempState,setTempState]=useState(false);
 const myRef = useRef(null)
    const executeScroll = () => scrollToRef(myRef)
 useEffect(()=>{
@@ -35,10 +38,15 @@ const getContacts=()=>{
   })
 }
 
-window.addEventListener('scroll',()=>{
-    
+ 
+
+window.addEventListener('scroll',()=>{ 
+  
     if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
-        setPage(page+1);
+
+        
+          setPage(page+1);
+        
     }
   })
 
@@ -61,7 +69,10 @@ window.addEventListener('scroll',()=>{
     <div className='dislayData'>
     {
        contacts.map((e)=>{
-        return <div>
+        return <div onClick={()=>{
+          setTempState(true)
+          setSingle(e)
+        }}>
             <div>
                 <div>
                     <img src={e.image} alt="ico" />
@@ -79,6 +90,7 @@ window.addEventListener('scroll',()=>{
 <div  onClick={executeScroll} className='upGo'>
 <img src="/top.png" alt="" />
 </div>
+{tempState ? <SingleSpecies single={single} setTempState={setTempState}/> : null}
     </>
 }
 
