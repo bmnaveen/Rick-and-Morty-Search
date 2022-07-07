@@ -16,7 +16,15 @@ const SingleSpecies = ({single,setTempState}) => {
 }}>X</h4>
 </div>
 <div className='imgSec'>
-
+<div>
+    <img src={single.image} alt="" />
+</div>
+<div>
+    <h3>{single.name}</h3>
+    <div> <div style={{backgroundColor:single.status=="unknown" ? "#9eadc3" : single.status=="Alive" ? "#37e598" : "red"}}></div><h4>{single.status} - {single.species}</h4></div>
+</div>
+</div>
+<div className='lineDiv'>
 </div>
 <div className='detSec'>
 
