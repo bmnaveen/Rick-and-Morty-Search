@@ -40,7 +40,7 @@ window.addEventListener('scroll',()=>{
     }
   })
 
-  return (
+  return <>
     <div className='weired'>
 <h1 >Rick and Morty Search</h1>
 <div>
@@ -55,15 +55,26 @@ window.addEventListener('scroll',()=>{
        
     }} type="text" placeholder='Search for a contact' />
 </div>
-<div className='dislayData'>
+    </div>
+    <div className='dislayData'>
     {
        contacts.map((e)=>{
-        return <h1>{e.name}</h1>
+        return <div>
+            <div>
+                <div>
+                    <img src={e.image} alt="ico" />
+                </div>
+<h5>{e.name}</h5>
+            </div>
+            <div>
+<div style={{backgroundColor:e.status=="unknown" ? "#9eadc3" : e.status=="Alive" ? "#37e598" : "red"}}></div>
+<h6>{e.status} - {e.species}</h6>
+            </div>
+        </div>
        }) 
     }
 </div>
-    </div>
-  )
+    </>
 }
 
 export default Weired
