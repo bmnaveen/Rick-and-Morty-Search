@@ -1,8 +1,10 @@
 .App {
   text-align: center;
+  position:relative
 }
 body{
   background-color: #f5f6f8;
+  
 }
 .App-logo {
   height: 40vmin;
@@ -39,11 +41,13 @@ body{
   }
 }
 .weired{
-  margin-top: 150px;
   width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-
+  height: 200px;
+  background-color: f5f6f8;
+  position:fixed;
+  background-color: #f5f6f8;
+  top:0px;
+  z-index: 10 !important;
 }
 .weired>h1{
  font-size: 50px;
@@ -76,6 +80,10 @@ body{
 .dislayData{
   width: 30%;
  margin: auto;
+ top: 200px;
+ position: absolute;
+ left: calc(35%);
+ z-index:-1;
  }
 .dislayData>div{
   display: flex;
