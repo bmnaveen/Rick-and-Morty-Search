@@ -5,19 +5,21 @@ import Search from './components/search';
 import { useRef } from 'react';
 import {useContext } from 'react';
 import {ContextStyle} from './contextApi/contextApi'
+ 
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 function App() {
-  const {contacts,togglePage,page,toggleTempState,tempState}=useContext(ContextStyle)
+  const {tempState}=useContext(ContextStyle)
   const myRef = useRef(null);
   const executeScroll = () => scrollToRef(myRef);
   return (
     <div ref={myRef} className="App" >
      <Search />
      <BasicUserCard/>
-     {tempState ? <DetailesUserCard/> : null}
-     <div  onClick={executeScroll} className='upGo'>
+     {tempState ?   <DetailesUserCard/> : null}
+     {tempState ?  null    : <div  onClick={executeScroll} className='upGo'>
 <img src="/top.png" alt="" />
-</div>
+</div>}
+     
     </div>
   );
 }

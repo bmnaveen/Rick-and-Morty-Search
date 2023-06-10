@@ -24,7 +24,7 @@ const DetailsUserCard = () => {
 </div>
 <div>
     <h3>{single.name}</h3>
-    <div> <div style={{backgroundColor:single.status=="unknown" ? "#9eadc3" : single.status=="Alive" ? "#37e598" : "red"}}></div><h4>{single.status} - {single.species}</h4></div>
+    <div> <div style={{backgroundColor:single.status==="unknown" ? "#9eadc3" : single.status==="Alive" ? "#37e598" : "red"}}></div><h4>{single.status} - {single.species}</h4></div>
 </div>
 </div>
 <div className='lineDiv'>
@@ -32,7 +32,7 @@ const DetailsUserCard = () => {
 <div className='detSec'>
 <div>
     <div>
-    <h5>gendre</h5>
+    <h5>gender</h5>
     <h4>{single.gender}</h4>
     </div>
     <div>

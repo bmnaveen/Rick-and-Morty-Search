@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ContextStyle } from '../contextApi/contextApi';
 import { useContext,useRef } from 'react';
 const Search = () => {
-    const {toggleName}=useContext(ContextStyle)
+    const {toggleName,tempState}=useContext(ContextStyle);
+    
     let timeId=useRef();
     const debounce=(fn,time)=>{
         return function(){
@@ -17,9 +18,9 @@ const Search = () => {
   return (
     <div  className='weired'>
     <h1 >Rick and Morty Search</h1>
-    <div>
+    <div >
     <div><img src="/search.jpg" alt="search-ico"  /></div>
-    <input onChange={(e)=>{
+    <input disabled={tempState} onChange={(e)=>{
             debounce(()=>{
                 toggleName(e.target.value);
             },600)
